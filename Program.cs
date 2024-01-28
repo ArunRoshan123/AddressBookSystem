@@ -6,8 +6,6 @@ using System.Threading.Tasks;
 
 namespace Address_Book_System
 {
-    internal class Program
-    {
         class Contact
         {
             public string firstname;
@@ -62,6 +60,8 @@ namespace Address_Book_System
                 Console.WriteLine("ZipCode :" + this.zipcode);
             }
         }
+    internal class Program
+    {
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Address Book Program.");
