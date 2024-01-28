@@ -8,9 +8,33 @@ namespace Address_Book_System
 {
     internal class Program
     {
+        class AddressBook
+        {
+            public string firstname;
+            public string lastname;
+            public string address;
+            public string cityname;
+            public string state;
+            public string phonenumber;
+            public string zipcode;
+            public string email;
+
+            public AddressBook(string fname, string lname, string addr, string city, string st, string pnumber, string zip, string eml)
+            {
+                firstname = fname;
+                lastname = lname;
+                address = addr;
+                cityname = city;
+                state = st;
+                phonenumber = pnumber;
+                zipcode = zip;
+                email = eml;
+            }
+        }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Address Book Program.");
+            AddressBook o1 = new AddressBook();
             Console.ReadLine();
         }
     }
