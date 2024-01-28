@@ -1,0 +1,7 @@
+C:\Users\srira\OneDrive\Desktop\Locobuzz_Training.Net\Address_Book_System\bin\Debug\Address_Book_System.exe.config
+C:\Users\srira\OneDrive\Desktop\Locobuzz_Training.Net\Address_Book_System\bin\Debug\Address_Book_System.exe
+C:\Users\srira\OneDrive\Desktop\Locobuzz_Training.Net\Address_Book_System\bin\Debug\Address_Book_System.pdb
+C:\Users\srira\OneDrive\Desktop\Locobuzz_Training.Net\Address_Book_System\obj\Debug\Address_Book_System.csproj.AssemblyReference.cache
+C:\Users\srira\OneDrive\Desktop\Locobuzz_Training.Net\Address_Book_System\obj\Debug\Address_Book_System.csproj.CoreCompileInputs.cache
+C:\Users\srira\OneDrive\Desktop\Locobuzz_Training.Net\Address_Book_System\obj\Debug\Address_Book_System.exe
+C:\Users\srira\OneDrive\Desktop\Locobuzz_Training.Net\Address_Book_System\obj\Debug\Address_Book_System.pdb
