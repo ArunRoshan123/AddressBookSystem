@@ -8,33 +8,67 @@ namespace Address_Book_System
 {
     internal class Program
     {
-        class AddressBook
+        class Contact
         {
             public string firstname;
             public string lastname;
+            public long phonenumber;
+            public string email;
+        }
+        class AddressBook : Contact 
+        {
+            public long zipcode;
             public string address;
             public string cityname;
             public string state;
-            public string phonenumber;
-            public string zipcode;
-            public string email;
 
-            public AddressBook(string fname, string lname, string addr, string city, string st, string pnumber, string zip, string eml)
+            public void add_details()
+            { 
+                Console.Write("Enter First Name: ");
+                this.firstname = Console.ReadLine();
+
+                Console.Write("Enter Last Name: ");
+                this.lastname = Console.ReadLine();
+
+                Console.Write("Enter Address: ");
+                this.address = Console.ReadLine();
+
+                Console.Write("Enter City: ");
+                this.cityname = Console.ReadLine();
+
+                Console.Write("Enter State: ");
+                this.state = Console.ReadLine();
+
+                Console.Write("Enter Phone Number: ");
+                this.phonenumber = Convert.ToInt64(Console.ReadLine());
+
+                Console.Write("Enter Zip Code: ");
+                this.zipcode = Convert.ToInt64(Console.ReadLine());
+
+                Console.Write("Enter Email: ");
+                this.email = Console.ReadLine();
+            }
+
+            public void display()
             {
-                firstname = fname;
-                lastname = lname;
-                address = addr;
-                cityname = city;
-                state = st;
-                phonenumber = pnumber;
-                zipcode = zip;
-                email = eml;
+                Console.WriteLine();
+                Console.WriteLine("First Name :" + this.firstname);
+                Console.WriteLine("Last Name :" + this.lastname);
+                Console.WriteLine("Phone Number :" + this.phonenumber);
+                Console.WriteLine("Email :" + this.email);
+                Console.WriteLine("Address :" + this.address);
+                Console.WriteLine("City :" + this.cityname);
+                Console.WriteLine("State :" + this.state);
+                Console.WriteLine("ZipCode :" + this.zipcode);
             }
         }
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Address Book Program.");
-            AddressBook o1 = new AddressBook();
+
+            AddressBook obj = new AddressBook();    
+            obj.add_details();
+            obj.display();
             Console.ReadLine();
         }
     }
