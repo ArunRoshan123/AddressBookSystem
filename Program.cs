@@ -6,47 +6,47 @@ using System.Threading;
 using System.Threading.Tasks;
 
 namespace Address_Book_System
-{
-        class Contact
-        {
-            public string firstname;
-            public string lastname;
-            public long phonenumber;
-            public string email;
-        }
-        class AddressBook : Contact 
-        {
-            public long zipcode;
-            public string address;
-            public string cityname;
-            public string state;
-
-            public void add_details()
-            { 
-                Console.Write("Enter First Name: ");
-                this.firstname = Console.ReadLine();
-
-                Console.Write("Enter Last Name: ");
-                this.lastname = Console.ReadLine();
-
-                Console.Write("Enter Address: ");
-                this.address = Console.ReadLine();
-
-                Console.Write("Enter City: ");
-                this.cityname = Console.ReadLine();
-
-                Console.Write("Enter State: ");
-                this.state = Console.ReadLine();
-
-                Console.Write("Enter Phone Number: ");
-                this.phonenumber = Convert.ToInt64(Console.ReadLine());
-
-                Console.Write("Enter Zip Code: ");
-                this.zipcode = Convert.ToInt64(Console.ReadLine());
-
-                Console.Write("Enter Email: ");
-                this.email = Console.ReadLine();
+{ 
+            class Contact
+            {
+                public string firstname;
+                public string lastname;
+                public long phonenumber;
+                public string email;
             }
+            class AddressBook : Contact 
+            {
+                public long zipcode;
+                public string address;
+                public string cityname;
+                public string state;
+
+                public void add_details()
+                { 
+                    Console.Write("Enter First Name: ");
+                    this.firstname = Console.ReadLine();
+
+                    Console.Write("Enter Last Name: ");
+                    this.lastname = Console.ReadLine();
+
+                    Console.Write("Enter Address: ");
+                    this.address = Console.ReadLine();
+
+                    Console.Write("Enter City: ");
+                    this.cityname = Console.ReadLine();
+
+                    Console.Write("Enter State: ");
+                    this.state = Console.ReadLine();
+
+                    Console.Write("Enter Phone Number: ");
+                    this.phonenumber = Convert.ToInt64(Console.ReadLine());
+
+                    Console.Write("Enter Zip Code: ");
+                    this.zipcode = Convert.ToInt64(Console.ReadLine());
+
+                    Console.Write("Enter Email: ");
+                    this.email = Console.ReadLine();
+                }
 
             public void display()
             {
@@ -137,7 +137,27 @@ namespace Address_Book_System
                     Thread.Sleep(2000);
                 }
             }
-        }
+             public void delete_contact(List<AddressBook> contact, string name)
+             {
+                 int flag = 0;
+                 for(int i=0; i<contact.Count; i++)
+                 {
+                     if (contact[i].firstname == name)
+                     {
+                         flag = 1;
+                         contact.Remove(contact[i]);
+                         Console.WriteLine("The given contact detail is removed");
+                         break;
+                     }
+            
+                 }
+                 if (flag == 0)
+                 {
+                     Console.WriteLine("The given contact detail is not avaiable in address book");
+                 }
+            
+             }
+}
     internal class Program
     {
         static void Main(string[] args)
@@ -149,7 +169,7 @@ namespace Address_Book_System
             do
             {
                 Console.WriteLine("Select an option: ");
-                Console.WriteLine("1.Add Details\n2.Display Details\n3.Edit a contact\n4.Exit");
+                Console.WriteLine("1.Add Details\n2.Display Details\n3.Edit a contact\n4.Delete\n5.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
@@ -178,6 +198,12 @@ namespace Address_Book_System
                         obj.edit_contact(list, name);
                         break;
                     case 4:
+                        Console.Clear();
+                        Console.WriteLine("Enter name to delete a contact\n");
+                        name = Console.ReadLine();
+                        obj.delete_contact(list, name);
+                        break;
+                    case 5:
                         Console.Clear();
                         Console.WriteLine("Exited");
                         flag = 1;
