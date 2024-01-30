@@ -221,32 +221,75 @@ namespace Address_Book_System
             }
         }
     }
+
+    class User
+    {
+        private Dictionary<string, AddressBook> users;
+
+        public User()
+        {
+            users = new Dictionary<string, AddressBook>();
+        }
+
+        public void addUser(string name)
+        {
+            AddressBook book = new AddressBook();
+            users.Add(name, book);
+        }
+
+        public void deleteUser(string name)
+        {
+            users.Remove(name);
+        }
+
+        public AddressBook getAddressBook(string name)
+        {
+            return users[name];
+        }
+
+        public Dictionary<string, AddressBook> GetUser()
+        {
+            return users;
+        }
+
+    }
     internal class Program
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to Address Book Program.");
             AddressBook obj = new AddressBook();
+            User obj1 = new User();
+
             int flag = 0;
-            do
+
+            while(flag == 0) 
+            { 
             {
                 Console.WriteLine("Select an option: ");
-                Console.WriteLine("1.Add Details\n2.Display Details\n3.Edit a contact\n4.Delete\n5.Exit");
+                Console.WriteLine("1.Add Details\n2.Perform Operations\n3.Display\n4.Exit");
                 int option = Convert.ToInt32(Console.ReadLine());
 
                 switch (option)
                 {
                     case 1:
                         Console.Clear();
-                        Console.WriteLine("Add details:\n");
-                        obj.add_details();
+                        Console.WriteLine("Add Name:\n");
+                        string name = Console.ReadLine();
+                        obj1.addUser(name);
+                        Thread.Sleep(2000);
                         Console.Clear();
                         break;
                     case 2:
                         Console.Clear();
-                        Console.WriteLine("Displaying Contact:\n");
-                        obj.display();
-                        Thread.Sleep(2000);
+                        Console.WriteLine("Add Name:\n");
+                        string choseName = Console.ReadLine();
+                        Console.Clear();
+
+                        if(obj1.GetPersons().ConsatinsKey(choseName))
+                        {
+                            AddressBook obj2 = ;
+                        }
                         break;
                     case 3:
                         Console.Clear();
