@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -13,7 +14,7 @@ namespace Address_Book_System
         private string lastname;
         private long phonenumber;
         private string email;
-        private long zipcode;
+        private string zipcode;
         private string address;
         private string cityname;
         private string state;
@@ -38,7 +39,7 @@ namespace Address_Book_System
             get { return email; }
             set { email = value; }
         }
-        public long Zipcode
+        public string Zipcode
         {
             get { return zipcode; }
             set { zipcode = value; }
@@ -59,7 +60,7 @@ namespace Address_Book_System
             set { state = value; }
         }
 
-        public Contact(string fname, string lname, long pnum, string email, long Zipcode, string addr, string sta, string City)
+        public Contact(string fname, string lname, long pnum, string email, string Zipcode, string addr, string sta, string City)
         {
             this.Firstname = fname;
             this.Lastname = lname;
@@ -80,16 +81,42 @@ namespace Address_Book_System
         {
             Console.WriteLine("Enter the first name :");
             string fname = Console.ReadLine();
-
+            string pattern1 = "^[a-zA-Z]+$";
+            while (!Regex.IsMatch(fname, pattern1))
+            {
+                if (!Regex.IsMatch(fname, pattern1))
+                {
+                    Console.WriteLine("Invalid first name");
+                    fname = Console.ReadLine();
+                }
+            }
             Console.WriteLine("Enter the last name : ");
             string lname = Console.ReadLine();
 
             Console.WriteLine("Enter the email : ");
             string email = Console.ReadLine();
+            string pattern2 = "^[a-zA-Z0-9]*@[a-z]+[.][a-z]{1,3}$";
+            while(!Regex.IsMatch(email, pattern2)) 
+            {
+                if(!Regex.IsMatch(email,pattern2))
+                {
+                    Console.WriteLine("Email not valid, Enter Email Again");
+                    email = Console.ReadLine();
+                }
+                
+            }
 
             Console.WriteLine("Enter the zipCode : ");
-            long zipcode = Convert.ToInt64(Console.ReadLine());
-
+            string zipcode = Console.ReadLine();
+            string pattern3 = "^[0-9]+$";
+            while(!Regex.IsMatch(zipcode,pattern3))
+            {
+                if(!Regex.IsMatch(zipcode,pattern3))
+                {
+                    Console.WriteLine("Invalid Zipcode, Enter Zipcode Again");
+                    zipcode = Console.ReadLine();
+                }
+            }
             Console.WriteLine("Enter the city : ");
             string city = Console.ReadLine();
 
@@ -182,7 +209,7 @@ namespace Address_Book_System
                             case 8:
                                 Console.Clear();
                                 Console.WriteLine("Enter the new zipCode : ");
-                                contacts[i].Zipcode = Convert.ToInt32(Console.ReadLine());
+                                contacts[i].Zipcode = Console.ReadLine();
                                 break;
                             case 9:
                                 Console.WriteLine("Edited");
