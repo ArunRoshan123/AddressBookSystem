@@ -1,5 +1,5 @@
-﻿using System;
-using Address_Book_System;
+﻿using Address_Book_System;
+using System;
 using System.Collections.Generic;
 
 namespace Address_Book_System
@@ -198,6 +198,7 @@ namespace Address_Book_System
         }
         public void display1()
         {
+            list.Sort();
             for (int i = 0; i < list.Count; i++)
             {
                 Console.WriteLine($"Contact : {i + 1}\n");
@@ -211,6 +212,7 @@ namespace Address_Book_System
                 Console.WriteLine($"ZipCode : {list[i].get_zip()}\n");
             }
         }
+
         public void Edit_Contact(string email_check, Search_city_state search, SortedDictionary<string, List<string>> City_or_State, SortedDictionary<string, List<string>> City_or_State1)
         {
             int flag = 0, n, found = 0;

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Address_Book_System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
@@ -27,7 +28,7 @@ namespace Address_Book_System
             do
             {
                 Console.WriteLine("Enter an Option to perform : ");
-                Console.WriteLine("1. Add Details\n2. Display Details\n3. Edit a Contact\n4. Delete a Contact\n5. Search a contact\n6. Add a Address Book\n7. Display Address Books\n8. Switch Address Book\n9. Exit\n10. ");
+                Console.WriteLine("1. Add Details\n2. Display Details\n3. Edit a Contact\n4. Delete a Contact\n5. Search a contact\n6. Add a Address Book\n7. Display Address Books\n8. Switch Address Book\n9. Exit\n");
                 option = Convert.ToInt32(Console.ReadLine());
                 Console.Clear();
                 if ((option == 2 || option == 3 || option == 4 || option == 5) && addr.contacts() == 0)
@@ -91,7 +92,7 @@ namespace Address_Book_System
                                 Console.WriteLine("Cities :\n");
                                 foreach (KeyValuePair<string, List<string>> pair in City_or_State)
                                 {
-                                    Console.Write($"{pair.Key} { pair.Value.Count()} Contacts\n");
+                                    Console.Write($"{pair.Key}  {pair.Value.Count()} Contacts\n");
                                 }
                                 Console.WriteLine("\nEnter The City to search :\n");
                                 string name3 = Console.ReadLine();
@@ -101,6 +102,7 @@ namespace Address_Book_System
                                 }
                                 else
                                 {
+                                    Console.Clear();
                                     search.display(name3, City_or_State);
                                 }
                                 break;
@@ -109,7 +111,7 @@ namespace Address_Book_System
                                 Console.WriteLine("States :\n");
                                 foreach (KeyValuePair<string, List<string>> pair in City_or_State1)
                                 {
-                                    Console.Write($"{pair.Key} { pair.Value.Count()} Contacts\n");
+                                    Console.Write($"{pair.Key}  {pair.Value.Count()} Contacts\n\n");
                                 }
                                 Console.WriteLine("\nEnter The State to search :\n");
                                 name3 = Console.ReadLine();
@@ -119,6 +121,7 @@ namespace Address_Book_System
                                 }
                                 else
                                 {
+                                    Console.Clear();
                                     search.display(name3, City_or_State1);
                                 }
                                 break;
@@ -127,6 +130,7 @@ namespace Address_Book_System
                         break;
                     case 6:
                         Console.Clear();
+                        // exception
                         do
                         {
                             Console.Clear();
@@ -190,6 +194,7 @@ namespace Address_Book_System
                                 Thread.Sleep(2000);
                             }
                         } while (true);
+
                         break;
                     case 9:
                         Console.Clear();

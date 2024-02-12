@@ -1,5 +1,4 @@
-﻿using Address_Book_System;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Address_Book_System
 {
-    class Contact
+    class Contact : IComparable<Contact>
     {
         private string first_name;
         private string last_name;
@@ -17,6 +16,7 @@ namespace Address_Book_System
         private string city;
         private string state;
         private int zip;
+
         public void set_firstname(string first)
         {
             this.first_name = first;
@@ -84,6 +84,10 @@ namespace Address_Book_System
         public void display()
         {
             Console.WriteLine("Welcome to Address Book Program");
+        }
+        public int CompareTo(Contact contact)
+        {
+            return this.first_name.CompareTo(contact.first_name);
         }
         public Contact(string first, string last, long phone, string email, string address, string city, string state, int zip)
         {
