@@ -1,5 +1,5 @@
-﻿using System;
-using Address_Book_System;
+﻿using Address_Book_System;
+using System;
 using System.Collections.Generic;
 
 namespace Address_Book_System
@@ -198,6 +198,7 @@ namespace Address_Book_System
         }
         public void display1()
         {
+            list.Sort();
             for (int i = 0; i < list.Count; i++)
             {
                 Console.WriteLine($"Contact : {i + 1}\n");

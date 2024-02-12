@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Address_Book_System;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics.Contracts;
 using System.Linq;
@@ -249,7 +250,7 @@ namespace Address_Book_System
                                 Console.WriteLine("Cities :\n");
                                 foreach (KeyValuePair<string, List<string>> pair in City_or_State)
                                 {
-                                    Console.Write($"{pair.Key}\n");
+                                    Console.Write($"{pair.Key}  {pair.Value.Count()} Contacts\n");
                                 }
                                 Console.WriteLine("\nEnter The City to search :\n");
                                 string name3 = Console.ReadLine();
@@ -259,6 +260,7 @@ namespace Address_Book_System
                                 }
                                 else
                                 {
+                                    Console.Clear();
                                     search.display(name3, City_or_State);
                                 }
                                 break;
@@ -267,7 +269,7 @@ namespace Address_Book_System
                                 Console.WriteLine("States :\n");
                                 foreach (KeyValuePair<string, List<string>> pair in City_or_State1)
                                 {
-                                    Console.Write($"{pair.Key}\n");
+                                    Console.Write($"{pair.Key}  {pair.Value.Count()} Contacts\n\n");
                                 }
                                 Console.WriteLine("\nEnter The State to search :\n");
                                 name3 = Console.ReadLine();
@@ -277,6 +279,7 @@ namespace Address_Book_System
                                 }
                                 else
                                 {
+                                    Console.Clear();
                                     search.display(name3, City_or_State1);
                                 }
                                 break;
