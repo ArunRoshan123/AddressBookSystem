@@ -211,7 +211,6 @@ namespace Address_Book_System
                 Console.WriteLine($"ZipCode : {list[i].get_zip()}\n");
             }
         }
-
         public void Edit_Contact(string email_check, Search_city_state search, SortedDictionary<string, List<string>> City_or_State, SortedDictionary<string, List<string>> City_or_State1)
         {
             int flag = 0, n, found = 0;

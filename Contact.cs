@@ -17,7 +17,6 @@ namespace Address_Book_System
         private string city;
         private string state;
         private int zip;
-
         public void set_firstname(string first)
         {
             this.first_name = first;
